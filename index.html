@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Music Player</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.1/dist/ionicons/ionicons.esm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.1/dist/ionicons/ionicons.min.js"></script>
+  </head>
+  <body>
+    <div class="music-player-container">
+      <div class="toggle-player">
+        <ion-icon name="remove-outline"></ion-icon>
+      </div>
+      <div class="avatar">
+        <img src="./pics/cyberpunk.png" alt="🎵" />
+      </div>
+      <div class="player">
+        <div class="sound-bars-lottie">
+          <div class="sound-bars"></div>
+        </div>
+
+        <div class="track-info">
+          <div class="track-name">Track Name</div>
+          <div class="track-artist">Artist Name</div>
+        </div>
+        <div class="track-nav">
+          <div class="prev-track">
+            <ion-icon name="play-back-sharp"></ion-icon>
+          </div>
+          <div class="playpause-track">
+            <ion-icon name="play-sharp"></ion-icon>
+          </div>
+          <div class="next-track">
+            <ion-icon name="play-forward-sharp"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
