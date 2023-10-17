@@ -2,18 +2,19 @@ let musicplayer = document.querySelector(".music-player-container");
 let togglePlayer = document.querySelector(".toggle-player");
 let trackInfo = document.querySelector(".track-info");
 let trackName = document.querySelector(".track-name");
+let soundbars = document.querySelector(".sound-bars");
 let trackArtist = document.querySelector(".track-artist");
 let trackNav = document.querySelector(".track-nav");
 let playPausebtn = document.querySelector(".playpause-track");
 let nextBtn = document.querySelector(".next-track");
 let currentPlaybackTime = 0;
+let lottiePlayer = document.getElementById("lottiePlayer");
 
 let prevBtn = document.querySelector(".prev-track");
 let trackIndex = 0;
 let isPlaying = false;
 let isHidden = false;
 let currentTrack = document.createElement("audio");
-let soundBars = document.querySelectorAll(".sound-bars");
 
 togglePlayer.addEventListener("click", function () {
   isHidden = !isHidden;
@@ -22,20 +23,14 @@ togglePlayer.addEventListener("click", function () {
     togglePlayer.innerHTML = "<ion-icon name='remove-outline'></ion-icon>";
     trackInfo.style.transitionDelay = "0.4s";
     trackNav.style.transitionDelay = "0.4s";
+    soundbars.style.transitionDelay = "0.4s";
   } else {
     musicplayer.classList.add("hide");
     togglePlayer.innerHTML = "<ion-icon name='add-outline'></ion-icon>";
     trackInfo.style.transitionDelay = "0s";
     trackNav.style.transitionDelay = "0s";
+    soundbars.style.transitionDelay = "0s";
   }
-});
-
-let soundBarsLottie = bodymovin.loadAnimation({
-  container: document.getElementById("sound-bars"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "https://assets3.lottiefiles.com/packages/lf20_1qjzjz.json",
 });
 
 let trackList = [
@@ -88,19 +83,17 @@ function playpauseTrack() {
   }
 }
 function pauseTrack() {
-  currentPlaybackTime = currentTrack.currentTime;
   currentTrack.pause();
   isPlaying = false;
   playPausebtn.innerHTML = "<ion-icon name='play-sharp'></ion-icon>";
-  soundBarsLottie.stop();
+  lottiePlayer.pause();
 }
 
 function playTrack() {
-  currentTrack.currentTime = currentPlaybackTime; // Set current playback time
   currentTrack.play();
   isPlaying = true;
   playPausebtn.innerHTML = "<ion-icon name='pause-sharp'></ion-icon>";
-  soundBarsLottie.playSegment([0, 120], true);
+  lottiePlayer.play();
 }
 
 function nextTrack() {

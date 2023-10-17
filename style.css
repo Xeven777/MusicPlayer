@@ -24,14 +24,15 @@ body {
   bottom: 4rem;
   left: 4rem;
   width: 480px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.79, 0.14, 0.15, 0.86);
 }
 .music-player-container.hide {
   width: 180px;
 }
 .music-player-container.hide .track-info,
-.music-player-container.hide .track-nav {
-  transition: all 0.5s ease-in-out;
+.music-player-container.hide .track-nav,
+.music-player-container.hide .sound-bars {
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   opacity: 0;
 }
 .toggle-player {
@@ -64,8 +65,7 @@ body {
 }
 .sound-bars {
   flex: 1;
-  width: 10px;
-  height: 50px;
+  width: 70px;
   margin: 0 20px;
 }
 .player {
@@ -118,11 +118,11 @@ body {
   font-size: 1.2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .music-player-container {
     bottom: 2rem;
     left: 2rem;
-    width: 300px;
+    width: 310px;
   }
   .toggle-player {
     height: 30px;
@@ -139,7 +139,7 @@ body {
     height: 90px;
   }
   .sound-bars {
-    height: 40px;
+    width: 20px;
   }
   .player {
     height: 50px;

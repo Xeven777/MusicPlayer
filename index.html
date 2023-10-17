@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Music Player</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+    <meta property="og:title" content="CyberPlayer" />
+    <meta property="og:description" content="Cyberpunk Music Player" />
+    <meta property="og:image" content="https://imgur.com/Xn5mIHsl.png" />
+    <title>CyberPlayer</title>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.1/dist/ionicons/ionicons.esm.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ionicons@7.2.1/dist/ionicons/ionicons.min.js"></script>
   </head>
@@ -19,9 +25,16 @@
       </div>
       <div class="player">
         <div class="sound-bars-lottie">
-          <div class="sound-bars"></div>
+          <div class="sound-bars">
+            <dotlottie-player
+              id="lottiePlayer"
+              src="https://lottie.host/e6273865-fcc0-4800-943f-327581e3aa49/YUhjnbjQbW.lottie"
+              background="transparent"
+              speed="1"
+              loop
+            ></dotlottie-player>
+          </div>
         </div>
-
         <div class="track-info">
           <div class="track-name">Track Name</div>
           <div class="track-artist">Artist Name</div>
